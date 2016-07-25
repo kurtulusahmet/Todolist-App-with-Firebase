@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate, UIPickerViewDataSource {
+class SignUpViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var userImageView: CustomImageView!
     
@@ -50,6 +50,64 @@ class SignUpViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapGestureRecognizer)
         
+    }
+    
+    //textField Part
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        usernameTextfield.resignFirstResponder()
+        emailTextfield.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+        return true
+    }
+    
+    var isUp = false
+    var kbHeight: CGFloat!
+    
+    func animateTextField(up: Bool) {
+        if isUp != up {
+            isUp    =   up
+            let movement = (up ? -kbHeight + 93 : kbHeight - 93)
+            UIView.animateWithDuration(0.3, animations: {
+                self.view.frame = CGRectOffset(self.view.frame, 0, movement )
+            })
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+        self.animateTextField(false)
+    }
+    
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let userInfo = notification.userInfo {
+            
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                
+                kbHeight = keyboardSize.height
+                self.animateTextField(true)
+            }
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignUpViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignUpViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        usernameTextfield.resignFirstResponder()
+        emailTextfield.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
     }
     
     func dismissController(gesture: UITapGestureRecognizer){

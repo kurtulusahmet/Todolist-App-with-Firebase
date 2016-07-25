@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="TodoListFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="TodoListFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -45,7 +45,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gLA-wu-Feo" kind="modal" id="ooO-4f-T6P"/>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oUK-Es-4gq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7W-Rw-asd">
@@ -109,6 +109,10 @@
                             <constraint firstItem="ns8-1t-vhN" firstAttribute="leading" secondItem="piH-5c-n5H" secondAttribute="leading" id="zDQ-SC-LWR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextfield" destination="i1K-q1-0MR" id="5MB-rK-vqQ"/>
+                        <outlet property="passwordTextfield" destination="ns8-1t-vhN" id="b4Y-HQ-pKc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +152,7 @@
                                     <constraint firstAttribute="height" constant="30" id="vtg-v2-7QU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eov-90-rX4">
                                 <rect key="frame" x="20" y="420" width="280" height="30"/>
@@ -264,7 +268,7 @@
                                             </constraints>
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="todo description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="knJ-p7-cQQ">
-                                            <rect key="frame" x="8" y="66" width="304" height="59.5"/>
+                                            <rect key="frame" x="8" y="66" width="304" height="60"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="59.5" id="6Ff-jP-cua"/>
@@ -367,10 +371,10 @@
             </objects>
             <point key="canvasLocation" x="2283" y="281"/>
         </scene>
-        <!--View Controller-->
+        <!--Reset Password View Controller-->
         <scene sceneID="qEQ-ML-nmc">
             <objects>
-                <viewController id="Uw1-ZH-uup" sceneMemberID="viewController">
+                <viewController id="Uw1-ZH-uup" customClass="ResetPasswordViewController" customModule="TodoListFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bwB-Mj-5RV"/>
                         <viewControllerLayoutGuide type="bottom" id="nmX-EI-6Bi"/>
@@ -397,6 +401,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetPasswordAction:" destination="Uw1-ZH-uup" eventType="touchUpInside" id="zU5-1A-eK9"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firebase_big" translatesAutoresizingMaskIntoConstraints="NO" id="BI6-zg-ryN">
                                 <rect key="frame" x="20" y="57" width="280" height="128"/>
@@ -416,6 +423,9 @@
                             <constraint firstItem="MwV-gf-Jit" firstAttribute="top" secondItem="BI6-zg-ryN" secondAttribute="bottom" constant="84" id="xrZ-VU-Q7P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextfield" destination="MwV-gf-Jit" id="hh6-UV-tnW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IS-ts-N4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -424,7 +434,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="MkY-rF-xw4">
             <objects>
-                <tabBarController id="gLA-wu-Feo" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" id="gLA-wu-Feo" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="BqZ-VB-TOs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -468,7 +478,7 @@
         <!--My Profile-->
         <scene sceneID="5bg-Bh-TFs">
             <objects>
-                <viewController id="2Xb-2z-Qcq" sceneMemberID="viewController">
+                <viewController id="2Xb-2z-Qcq" customClass="MyProfileViewController" customModule="TodoListFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="485-Pu-uko"/>
                         <viewControllerLayoutGuide type="bottom" id="H1u-py-NvC"/>
@@ -556,7 +566,14 @@
                             <constraint firstItem="SG2-yK-rGb" firstAttribute="top" secondItem="fl0-cV-05S" secondAttribute="bottom" constant="20" id="ztP-W3-Goo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Profile" id="IeQ-OK-mLy"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="IeQ-OK-mLy">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="NiP-GT-R5G">
+                            <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logoutAction:" destination="2Xb-2z-Qcq" id="oxE-3X-aog"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxA-1K-Zs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
