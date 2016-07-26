@@ -574,6 +574,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="country" destination="evR-UF-9lQ" id="SVn-Sk-ize"/>
+                        <outlet property="email" destination="L3X-VJ-lPg" id="e7v-Ul-yuB"/>
+                        <outlet property="userImageView" destination="3Nh-8n-c5R" id="g0p-DK-dG0"/>
+                        <outlet property="username" destination="k2n-RX-cE2" id="WVX-dm-Crm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxA-1K-Zs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
