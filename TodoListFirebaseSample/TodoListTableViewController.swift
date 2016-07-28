@@ -7,45 +7,58 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseInstanceID
+import FirebaseMessaging
 
 class TodoListTableViewController: UITableViewController {
 
+    var todoArray = [Todo]()
+    
+    var databaseRef: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        databaseRef = FIRDatabase.database().reference().child("allTodos")
+        databaseRef.observeEventType(.Value, withBlock: { (snapshot) in
+            
+            var newItems = [Todo]()
+            
+            for item in snapshot.children {
+                
+                let newTodo = Todo(snapshot: item as! FIRDataSnapshot)
+                newItems.insert(newTodo, atIndex: 0)
+                
+            }
+            self.todoArray = newItems
+            self.tableView.reloadData()
+            
+            }) { (error) in
+                print(error.localizedDescription)
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return todoArray.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TodoTableViewCell
 
         // Configure the cell...
+        cell.todoSummaryLabel.text = todoArray[indexPath.row].title
+        cell.todoDescriptionTextview.text = todoArray[indexPath.row].content
+        cell.usernameLabel.text = todoArray[indexPath.row].username
+        cell.todoColorView.backgroundColor = UIColor(red: todoArray[indexPath.row].red, green: todoArray[indexPath.row].green, blue: todoArray[indexPath.row].blue, alpha: 1.0)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -55,17 +68,20 @@ class TodoListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            let ref = todoArray[indexPath.row].ref
+            ref!.removeValue()
+            todoArray.removeAtIndex(indexPath.row)
+            
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

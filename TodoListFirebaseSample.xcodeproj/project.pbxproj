@@ -19,7 +19,9 @@
 		643139F31D43E81500E3A564 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643139F21D43E81500E3A564 /* ResetPasswordViewController.swift */; };
 		643139F71D43E8A000E3A564 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643139F61D43E8A000E3A564 /* AddTodoViewController.swift */; };
 		643139F91D43E8DA00E3A564 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643139F81D43E8DA00E3A564 /* TodoListTableViewController.swift */; };
+		6447DF3B1D4A3C7100C553EE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447DF3A1D4A3C7100C553EE /* Todo.swift */; };
 		647949951D43E4E400A5C6A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 647949941D43E4E400A5C6A7 /* GoogleService-Info.plist */; };
+		64C1F8E71D4A9F2D004761B8 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C1F8E61D4A9F2D004761B8 /* TodoTableViewCell.swift */; };
 		64D2FFDE1D46AAE900CEEE02 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2FFDD1D46AAE900CEEE02 /* MyProfileViewController.swift */; };
 		64D2FFE01D46AFAB00CEEE02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2FFDF1D46AFAB00CEEE02 /* User.swift */; };
 		64F365531D44E4F900A5851E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F365521D44E4F900A5851E /* CustomImageView.swift */; };
@@ -61,7 +63,9 @@
 		643139F21D43E81500E3A564 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		643139F61D43E8A000E3A564 /* AddTodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		643139F81D43E8DA00E3A564 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
+		6447DF3A1D4A3C7100C553EE /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		647949941D43E4E400A5C6A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		64C1F8E61D4A9F2D004761B8 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		64D2FFDD1D46AAE900CEEE02 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		64D2FFDF1D46AFAB00CEEE02 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		64F365521D44E4F900A5851E /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				643139F61D43E8A000E3A564 /* AddTodoViewController.swift */,
 				643139F81D43E8DA00E3A564 /* TodoListTableViewController.swift */,
 				64D2FFDD1D46AAE900CEEE02 /* MyProfileViewController.swift */,
+				64C1F8E61D4A9F2D004761B8 /* TodoTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				64FA99171D456397003AB6ED /* NetworkingService.swift */,
 				64F365521D44E4F900A5851E /* CustomImageView.swift */,
 				64D2FFDF1D46AFAB00CEEE02 /* User.swift */,
+				6447DF3A1D4A3C7100C553EE /* Todo.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -385,8 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6447DF3B1D4A3C7100C553EE /* Todo.swift in Sources */,
 				643139F11D43E7EF00E3A564 /* SignUpViewController.swift in Sources */,
 				643139EF1D43E7C500E3A564 /* LoginViewController.swift in Sources */,
+				64C1F8E71D4A9F2D004761B8 /* TodoTableViewCell.swift in Sources */,
 				640778B91D43E42C009B0FF2 /* AppDelegate.swift in Sources */,
 				64D2FFDE1D46AAE900CEEE02 /* MyProfileViewController.swift in Sources */,
 				64FA99181D456397003AB6ED /* NetworkingService.swift in Sources */,

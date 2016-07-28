@@ -243,14 +243,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="134" id="TY6-2k-xdR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="134" id="TY6-2k-xdR" customClass="TodoTableViewCell" customModule="TodoListFirebaseSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="49.5" width="320" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TY6-2k-xdR" id="doG-Dg-K6l">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todo title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stY-ha-TJM">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stY-ha-TJM">
                                             <rect key="frame" x="36" y="8" width="276" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="47E-iJ-oLB"/>
@@ -267,7 +267,7 @@
                                                 <constraint firstAttribute="width" constant="20" id="qs3-ue-emR"/>
                                             </constraints>
                                         </view>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="todo description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="knJ-p7-cQQ">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="todo description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knJ-p7-cQQ">
                                             <rect key="frame" x="8" y="66" width="304" height="60"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -304,6 +304,12 @@
                                         <constraint firstItem="stY-ha-TJM" firstAttribute="leading" secondItem="Atr-gx-lg1" secondAttribute="trailing" constant="8" id="xMN-YC-05C"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="todoColorView" destination="Atr-gx-lg1" id="Ndg-es-dke"/>
+                                    <outlet property="todoDescriptionTextview" destination="knJ-p7-cQQ" id="XO8-ta-Jkg"/>
+                                    <outlet property="todoSummaryLabel" destination="ayo-DJ-ZTO" id="sxs-4o-LDu"/>
+                                    <outlet property="usernameLabel" destination="stY-ha-TJM" id="Stb-eg-MQa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -336,7 +342,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Todo Summary" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O83-wT-9ZW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Todo Summary" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O83-wT-9ZW">
                                 <rect key="frame" x="20" y="52" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -364,8 +370,15 @@
                     <navigationItem key="navigationItem" title="Add Todo" id="tIp-K7-6fv">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="kjt-Jb-fkI">
                             <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveAction:" destination="WRH-GM-zoE" id="17G-hK-n6v"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="todoDescription" destination="qAC-6I-44U" id="sql-cD-DZd"/>
+                        <outlet property="todoSummary" destination="O83-wT-9ZW" id="4KQ-lf-hfz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cml-eX-hbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
