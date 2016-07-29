@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -234,6 +235,67 @@
             </objects>
             <point key="canvasLocation" x="569" y="-36"/>
         </scene>
+        <!--Add Post-->
+        <scene sceneID="dAa-UE-PJg">
+            <objects>
+                <viewController id="1ml-NU-ZsC" customClass="AddPostViewController" customModule="TodoListFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="58l-31-wXl"/>
+                        <viewControllerLayoutGuide type="bottom" id="xdn-q0-PIn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tPF-oS-tgg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EB7-cf-ltt">
+                                <rect key="frame" x="20" y="20" width="280" height="160"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jLX-gH-bBo">
+                                <rect key="frame" x="20" y="188" width="280" height="128"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eS-SX-etb">
+                                <rect key="frame" x="20" y="20" width="280" height="160"/>
+                                <connections>
+                                    <action selector="chooseImageAction:" destination="1ml-NU-ZsC" eventType="touchUpInside" id="IgA-xU-Mv5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8862745098" green="0.89411764709999997" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EB7-cf-ltt" firstAttribute="leading" secondItem="tPF-oS-tgg" secondAttribute="leadingMargin" constant="4" id="9d8-T0-KNZ"/>
+                            <constraint firstItem="EB7-cf-ltt" firstAttribute="top" secondItem="5eS-SX-etb" secondAttribute="top" id="9pr-Sy-JA0"/>
+                            <constraint firstItem="5eS-SX-etb" firstAttribute="centerX" secondItem="tPF-oS-tgg" secondAttribute="centerX" id="Bxg-wJ-ezd"/>
+                            <constraint firstItem="xdn-q0-PIn" firstAttribute="top" secondItem="jLX-gH-bBo" secondAttribute="bottom" constant="139" id="Stx-c4-lNc"/>
+                            <constraint firstItem="EB7-cf-ltt" firstAttribute="top" secondItem="tPF-oS-tgg" secondAttribute="top" constant="20" symbolic="YES" id="TQn-fn-ewf"/>
+                            <constraint firstItem="EB7-cf-ltt" firstAttribute="leading" secondItem="jLX-gH-bBo" secondAttribute="leading" id="UM7-X3-TBO"/>
+                            <constraint firstItem="EB7-cf-ltt" firstAttribute="trailing" secondItem="jLX-gH-bBo" secondAttribute="trailing" id="ZIJ-jE-Ns2"/>
+                            <constraint firstItem="EB7-cf-ltt" firstAttribute="leading" secondItem="5eS-SX-etb" secondAttribute="leading" id="b3Z-Lc-Z7R"/>
+                            <constraint firstItem="jLX-gH-bBo" firstAttribute="top" secondItem="EB7-cf-ltt" secondAttribute="bottom" constant="8" symbolic="YES" id="l17-PF-J0q"/>
+                            <constraint firstItem="jLX-gH-bBo" firstAttribute="top" secondItem="5eS-SX-etb" secondAttribute="bottom" constant="8" symbolic="YES" id="pY1-DQ-6cE"/>
+                            <constraint firstItem="jLX-gH-bBo" firstAttribute="centerY" secondItem="tPF-oS-tgg" secondAttribute="centerY" id="pkb-vU-0xw"/>
+                            <constraint firstItem="5eS-SX-etb" firstAttribute="trailing" secondItem="EB7-cf-ltt" secondAttribute="trailing" id="wGH-NW-rj7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Post" id="adA-n3-Rpx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="s6e-7J-whG">
+                            <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveAction:" destination="1ml-NU-ZsC" id="Ao5-BL-JOU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postContent" destination="jLX-gH-bBo" id="EGK-dH-fTi"/>
+                        <outlet property="postImage" destination="EB7-cf-ltt" id="yEw-3Y-hYm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z3m-O4-bTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="-356"/>
+        </scene>
         <!--Todo List-->
         <scene sceneID="7CP-nY-fVN">
             <objects>
@@ -311,6 +373,58 @@
                                     <outlet property="usernameLabel" destination="stY-ha-TJM" id="Stb-eg-MQa"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PCell" rowHeight="252" id="Adi-Xo-gac" customClass="PostTableViewCell" customModule="TodoListFirebaseSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="184" width="320" height="252"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Adi-Xo-gac" id="wq5-fj-qUb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="251.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQS-pD-MUp">
+                                            <rect key="frame" x="8" y="8" width="36" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="Gho-Mo-dri"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PCc-ws-Km9">
+                                            <rect key="frame" x="8" y="52" width="304" height="163.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcI-A4-aGg">
+                                            <rect key="frame" x="8" y="223.5" width="304" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9l-sU-Zvm">
+                                            <rect key="frame" x="52" y="15" width="260" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TcI-A4-aGg" firstAttribute="leading" secondItem="wq5-fj-qUb" secondAttribute="leading" constant="8" id="8dc-uH-sSx"/>
+                                        <constraint firstItem="KQS-pD-MUp" firstAttribute="leading" secondItem="wq5-fj-qUb" secondAttribute="leadingMargin" id="IiY-Ic-zZr"/>
+                                        <constraint firstAttribute="trailing" secondItem="TcI-A4-aGg" secondAttribute="trailing" constant="8" id="OLV-sc-Lsc"/>
+                                        <constraint firstItem="y9l-sU-Zvm" firstAttribute="leading" secondItem="KQS-pD-MUp" secondAttribute="trailing" constant="8" symbolic="YES" id="SNB-kw-va9"/>
+                                        <constraint firstItem="y9l-sU-Zvm" firstAttribute="trailing" secondItem="wq5-fj-qUb" secondAttribute="trailingMargin" id="TQf-ha-0kT"/>
+                                        <constraint firstItem="TcI-A4-aGg" firstAttribute="top" secondItem="PCc-ws-Km9" secondAttribute="bottom" constant="8" id="VVh-L5-u9f"/>
+                                        <constraint firstItem="KQS-pD-MUp" firstAttribute="top" secondItem="wq5-fj-qUb" secondAttribute="topMargin" id="XUu-LU-Pct"/>
+                                        <constraint firstItem="PCc-ws-Km9" firstAttribute="top" secondItem="y9l-sU-Zvm" secondAttribute="bottom" constant="16" id="cQO-YL-NJt"/>
+                                        <constraint firstItem="PCc-ws-Km9" firstAttribute="top" secondItem="KQS-pD-MUp" secondAttribute="bottom" constant="8" symbolic="YES" id="cuI-AM-Uia"/>
+                                        <constraint firstItem="y9l-sU-Zvm" firstAttribute="trailing" secondItem="PCc-ws-Km9" secondAttribute="trailing" id="eRI-XR-UEW"/>
+                                        <constraint firstAttribute="bottom" secondItem="TcI-A4-aGg" secondAttribute="bottom" constant="8" id="iSS-as-MTI"/>
+                                        <constraint firstItem="KQS-pD-MUp" firstAttribute="centerY" secondItem="y9l-sU-Zvm" secondAttribute="centerY" id="jQ6-LA-SAV"/>
+                                        <constraint firstItem="KQS-pD-MUp" firstAttribute="leading" secondItem="PCc-ws-Km9" secondAttribute="leading" id="tga-Nj-vzB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="postContent" destination="TcI-A4-aGg" id="gGX-PZ-c1I"/>
+                                    <outlet property="postImage" destination="PCc-ws-Km9" id="QHi-U6-Iue"/>
+                                    <outlet property="userImage" destination="KQS-pD-MUp" id="sDu-sI-R8C"/>
+                                    <outlet property="username" destination="y9l-sU-Zvm" id="ABX-Ay-beM"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="3dC-oA-osB" id="5md-Bu-gSn"/>
@@ -318,13 +432,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todo List" id="yLb-8M-Nin">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xHb-kI-oLR">
-                            <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="WRH-GM-zoE" kind="push" id="m9a-3S-i0K"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="xHb-kI-oLR">
+                                <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="WRH-GM-zoE" kind="push" id="m9a-3S-i0K"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="compose" id="sWg-Ia-SRp">
+                                <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="1ml-NU-ZsC" kind="push" id="9vM-5T-dBj"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="FuI-ip-4bY" kind="push" identifier="updateTodo" id="pG2-cp-VEH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdu-Vb-3bP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cml-eX-hbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="281"/>
+            <point key="canvasLocation" x="2299" y="281"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="qEQ-ML-nmc">
@@ -596,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxA-1K-Zs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="928"/>
+            <point key="canvasLocation" x="1865" y="969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eUT-nX-vV8">
@@ -619,7 +744,61 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knJ-YW-iLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1474" y="928"/>
+            <point key="canvasLocation" x="1473" y="969"/>
+        </scene>
+        <!--Update Todo-->
+        <scene sceneID="CfG-NL-rIL">
+            <objects>
+                <viewController id="FuI-ip-4bY" customClass="UpdateViewController" customModule="TodoListFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wAP-i9-EGc"/>
+                        <viewControllerLayoutGuide type="bottom" id="ADw-gG-Oow"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q9T-H0-0Ch">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Todo Summary" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-bc-qAN">
+                                <rect key="frame" x="20" y="52" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tMt-Uo-ZSz">
+                                <rect key="frame" x="20" y="120" width="280" height="189"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="rnf-KL-hhl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8862745098" green="0.89411764709999997" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PNe-bc-qAN" firstAttribute="top" secondItem="wAP-i9-EGc" secondAttribute="bottom" constant="52" id="0e4-X8-QF4"/>
+                            <constraint firstItem="PNe-bc-qAN" firstAttribute="leading" secondItem="q9T-H0-0Ch" secondAttribute="leadingMargin" constant="4" id="Hdh-Hr-lgb"/>
+                            <constraint firstItem="PNe-bc-qAN" firstAttribute="trailing" secondItem="tMt-Uo-ZSz" secondAttribute="trailing" id="RsS-0i-z5d"/>
+                            <constraint firstItem="PNe-bc-qAN" firstAttribute="centerX" secondItem="q9T-H0-0Ch" secondAttribute="centerX" id="cXt-IU-Mig"/>
+                            <constraint firstItem="tMt-Uo-ZSz" firstAttribute="top" secondItem="PNe-bc-qAN" secondAttribute="bottom" constant="38" id="o6e-XF-ni4"/>
+                            <constraint firstItem="PNe-bc-qAN" firstAttribute="leading" secondItem="tMt-Uo-ZSz" secondAttribute="leading" id="pFb-vl-Yj7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Todo" id="FVH-nx-RLU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zoL-hH-HdT">
+                            <color key="tintColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="editAction:" destination="FuI-ip-4bY" id="5jP-3B-73q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="todoDescription" destination="tMt-Uo-ZSz" id="WLq-AQ-C76"/>
+                        <outlet property="todoSummary" destination="PNe-bc-qAN" id="NDW-45-4H3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyi-1m-lkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="969"/>
         </scene>
     </scenes>
     <resources>

@@ -24,6 +24,11 @@
 		64C1F8E71D4A9F2D004761B8 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C1F8E61D4A9F2D004761B8 /* TodoTableViewCell.swift */; };
 		64D2FFDE1D46AAE900CEEE02 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2FFDD1D46AAE900CEEE02 /* MyProfileViewController.swift */; };
 		64D2FFE01D46AFAB00CEEE02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2FFDF1D46AFAB00CEEE02 /* User.swift */; };
+		64E634441D4BDB5900B79952 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E634431D4BDB5900B79952 /* UpdateViewController.swift */; };
+		64E634461D4BE0F800B79952 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E634451D4BE0F800B79952 /* Posts.swift */; };
+		64E634481D4BE3CD00B79952 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E634471D4BE3CD00B79952 /* AddPostViewController.swift */; };
+		64E6344A1D4BF00600B79952 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E634491D4BF00600B79952 /* PostTableViewCell.swift */; };
+		64E6344E1D4BF92200B79952 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E6344D1D4BF92200B79952 /* HMSegmentedControl.m */; };
 		64F365531D44E4F900A5851E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F365521D44E4F900A5851E /* CustomImageView.swift */; };
 		64FA99181D456397003AB6ED /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA99171D456397003AB6ED /* NetworkingService.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,13 @@
 		64C1F8E61D4A9F2D004761B8 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		64D2FFDD1D46AAE900CEEE02 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		64D2FFDF1D46AFAB00CEEE02 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		64E634431D4BDB5900B79952 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		64E634451D4BE0F800B79952 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		64E634471D4BE3CD00B79952 /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		64E634491D4BF00600B79952 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		64E6344B1D4BF92200B79952 /* TodoListFirebaseSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodoListFirebaseSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		64E6344C1D4BF92200B79952 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		64E6344D1D4BF92200B79952 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		64F365521D44E4F900A5851E /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		64FA99171D456397003AB6ED /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		6B4D342FFAEB3361FDFE1F0F /* Pods-TodoListFirebaseSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListFirebaseSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoListFirebaseSample/Pods-TodoListFirebaseSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +187,12 @@
 				643139F81D43E8DA00E3A564 /* TodoListTableViewController.swift */,
 				64D2FFDD1D46AAE900CEEE02 /* MyProfileViewController.swift */,
 				64C1F8E61D4A9F2D004761B8 /* TodoTableViewCell.swift */,
+				64E634431D4BDB5900B79952 /* UpdateViewController.swift */,
+				64E634471D4BE3CD00B79952 /* AddPostViewController.swift */,
+				64E634491D4BF00600B79952 /* PostTableViewCell.swift */,
+				64E6344C1D4BF92200B79952 /* HMSegmentedControl.h */,
+				64E6344D1D4BF92200B79952 /* HMSegmentedControl.m */,
+				64E6344B1D4BF92200B79952 /* TodoListFirebaseSample-Bridging-Header.h */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 				64F365521D44E4F900A5851E /* CustomImageView.swift */,
 				64D2FFDF1D46AFAB00CEEE02 /* User.swift */,
 				6447DF3A1D4A3C7100C553EE /* Todo.swift */,
+				64E634451D4BE0F800B79952 /* Posts.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -392,14 +411,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6447DF3B1D4A3C7100C553EE /* Todo.swift in Sources */,
+				64E634481D4BE3CD00B79952 /* AddPostViewController.swift in Sources */,
+				64E634461D4BE0F800B79952 /* Posts.swift in Sources */,
 				643139F11D43E7EF00E3A564 /* SignUpViewController.swift in Sources */,
 				643139EF1D43E7C500E3A564 /* LoginViewController.swift in Sources */,
 				64C1F8E71D4A9F2D004761B8 /* TodoTableViewCell.swift in Sources */,
 				640778B91D43E42C009B0FF2 /* AppDelegate.swift in Sources */,
 				64D2FFDE1D46AAE900CEEE02 /* MyProfileViewController.swift in Sources */,
+				64E6344E1D4BF92200B79952 /* HMSegmentedControl.m in Sources */,
 				64FA99181D456397003AB6ED /* NetworkingService.swift in Sources */,
 				64F365531D44E4F900A5851E /* CustomImageView.swift in Sources */,
 				643139F31D43E81500E3A564 /* ResetPasswordViewController.swift in Sources */,
+				64E6344A1D4BF00600B79952 /* PostTableViewCell.swift in Sources */,
+				64E634441D4BDB5900B79952 /* UpdateViewController.swift in Sources */,
 				643139F71D43E8A000E3A564 /* AddTodoViewController.swift in Sources */,
 				64D2FFE01D46AFAB00CEEE02 /* User.swift in Sources */,
 				643139F91D43E8DA00E3A564 /* TodoListTableViewController.swift in Sources */,
@@ -547,11 +571,14 @@
 			baseConfigurationReference = EE8D6B0EA8CE996C3CF80B03 /* Pods-TodoListFirebaseSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TodoListFirebaseSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtulusdev.TodoListFirebaseSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoListFirebaseSample/TodoListFirebaseSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -560,11 +587,13 @@
 			baseConfigurationReference = 6B4D342FFAEB3361FDFE1F0F /* Pods-TodoListFirebaseSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TodoListFirebaseSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtulusdev.TodoListFirebaseSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoListFirebaseSample/TodoListFirebaseSample-Bridging-Header.h";
 			};
 			name = Release;
 		};
