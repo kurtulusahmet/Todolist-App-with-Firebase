@@ -57,6 +57,9 @@ struct NetworkingService {
                 if let user = user {
                     
                     print("\(user.displayName!) has signed in succesfully!")
+                    
+                    let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    appDel.logUser()
               
                 }
                 

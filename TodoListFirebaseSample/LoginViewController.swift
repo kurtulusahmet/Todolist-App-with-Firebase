@@ -79,8 +79,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func loginAction(sender: UIButton) {
         networkingService.signIn(emailTextfield.text!, password: passwordTextfield.text!)
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
-        presentViewController(vc, animated: true, completion: nil)
     }
 }

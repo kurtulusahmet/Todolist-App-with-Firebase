@@ -14,6 +14,7 @@ import FirebaseStorage
 
 class MyProfileViewController: UIViewController {
 
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var country: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var username: UITextField!
@@ -83,6 +84,52 @@ class MyProfileViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func updateEmailAction(sender: UIButton) {
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            user.updateEmail(email.text!, completion: { (error) in
+                if let error = error{
+                    print(error.localizedDescription)
+                }else {
+                    let alertView = UIAlertView(title: "Update Email", message: "You have successfully updated your email", delegate: self, cancelButtonTitle: "OK, Thanks")
+                    alertView.show()
+                }
+            })
+        }
+    }
+    
+    @IBAction func updatePasswordAction(sender: UIButton) {
+        if let user = FIRAuth.auth()?.currentUser {
+            
+            user.updatePassword(password.text!, completion: { (error) in
+                if let error = error{
+                    print(error.localizedDescription)
+                }else {
+                    let alertView = UIAlertView(title: "Update Password", message: "You have successfully updated your password", delegate: self, cancelButtonTitle: "OK, Thanks")
+                    alertView.show()
+                    
+                    
+                    
+                }
+            })
+        }
+    }
+    
+    @IBAction func deleteAccount(sender: UIButton) {
+        let user = FIRAuth.auth()?.currentUser
+        user?.deleteWithCompletion({ (error) in
+            if let error = error{
+                print(error.localizedDescription)
+            }else {
+                let alertView = UIAlertView(title: "Delete Account", message: "You have successfully deleted your acoount. We are sorry to see you leaving us this way.", delegate: self, cancelButtonTitle: "OK, Thanks")
+                alertView.show()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+        })
+    }
+    
     
 
 }
