@@ -29,6 +29,9 @@
 		64E634481D4BE3CD00B79952 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E634471D4BE3CD00B79952 /* AddPostViewController.swift */; };
 		64E6344A1D4BF00600B79952 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E634491D4BF00600B79952 /* PostTableViewCell.swift */; };
 		64E6344E1D4BF92200B79952 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E6344D1D4BF92200B79952 /* HMSegmentedControl.m */; };
+		64E74C4A1D4E104000FFA54F /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E74C491D4E104000FFA54F /* CommentTableViewCell.swift */; };
+		64E74C4C1D4E113900FFA54F /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E74C4B1D4E113900FFA54F /* CommentViewController.swift */; };
+		64E74C4E1D4E130600FFA54F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E74C4D1D4E130600FFA54F /* Comment.swift */; };
 		64F365531D44E4F900A5851E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F365521D44E4F900A5851E /* CustomImageView.swift */; };
 		64FA99181D456397003AB6ED /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA99171D456397003AB6ED /* NetworkingService.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +83,9 @@
 		64E6344B1D4BF92200B79952 /* TodoListFirebaseSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodoListFirebaseSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		64E6344C1D4BF92200B79952 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		64E6344D1D4BF92200B79952 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		64E74C491D4E104000FFA54F /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		64E74C4B1D4E113900FFA54F /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		64E74C4D1D4E130600FFA54F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		64F365521D44E4F900A5851E /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		64FA99171D456397003AB6ED /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		6B4D342FFAEB3361FDFE1F0F /* Pods-TodoListFirebaseSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListFirebaseSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoListFirebaseSample/Pods-TodoListFirebaseSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 				64E6344C1D4BF92200B79952 /* HMSegmentedControl.h */,
 				64E6344D1D4BF92200B79952 /* HMSegmentedControl.m */,
 				64E6344B1D4BF92200B79952 /* TodoListFirebaseSample-Bridging-Header.h */,
+				64E74C491D4E104000FFA54F /* CommentTableViewCell.swift */,
+				64E74C4B1D4E113900FFA54F /* CommentViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 				64D2FFDF1D46AFAB00CEEE02 /* User.swift */,
 				6447DF3A1D4A3C7100C553EE /* Todo.swift */,
 				64E634451D4BE0F800B79952 /* Posts.swift */,
+				64E74C4D1D4E130600FFA54F /* Comment.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -423,10 +432,13 @@
 				64F365531D44E4F900A5851E /* CustomImageView.swift in Sources */,
 				643139F31D43E81500E3A564 /* ResetPasswordViewController.swift in Sources */,
 				64E6344A1D4BF00600B79952 /* PostTableViewCell.swift in Sources */,
+				64E74C4A1D4E104000FFA54F /* CommentTableViewCell.swift in Sources */,
 				64E634441D4BDB5900B79952 /* UpdateViewController.swift in Sources */,
+				64E74C4E1D4E130600FFA54F /* Comment.swift in Sources */,
 				643139F71D43E8A000E3A564 /* AddTodoViewController.swift in Sources */,
 				64D2FFE01D46AFAB00CEEE02 /* User.swift in Sources */,
 				643139F91D43E8DA00E3A564 /* TodoListTableViewController.swift in Sources */,
+				64E74C4C1D4E113900FFA54F /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

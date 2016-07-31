@@ -235,16 +235,32 @@ class TodoListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("updateTodo", sender: self)
+        if segmentedControl.selectedSegmentIndex == 0 {
+            performSegueWithIdentifier("updateTodo", sender: self)}
+        else {
+            performSegueWithIdentifier("addComment", sender: self)
+        }
     }
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "updateTodo" {
-            let vc = segue.destinationViewController as! UpdateViewController
-            let indexPath = tableView.indexPathForSelectedRow
+        if segmentedControl.selectedSegmentIndex == 0 {
+            if segue.identifier == "updateTodo" {
+                
+                let vc = segue.destinationViewController as! UpdateViewController
+                let indexPath = tableView.indexPathForSelectedRow!
+                
+                vc.todo = todoArray[indexPath.row]
+            }
+        }else {
+            if segue.identifier == "addComment" {
+                
+                let vc = segue.destinationViewController as! CommentViewController
+                let indexPath = tableView.indexPathForSelectedRow!
+                
+                vc.selectedPost = posts[indexPath.row]
+            }
             
-            vc.todo = todoArray[(indexPath?.row)!]
         }
     }
 
